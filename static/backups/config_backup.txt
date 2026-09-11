@@ -1,0 +1,5 @@
+System Configuration Backup
+
+Generated: 2026-06-03
+
+FLAG{EXPOSED_CONFIGURATION_FILE}
