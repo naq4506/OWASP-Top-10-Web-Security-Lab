@@ -14,9 +14,17 @@ app = Flask(__name__)
 # ── REQUIRED for Flask session (cookies) to work ─────────────────────────────
 app.secret_key = 'owasp-lab-secret-key-change-in-production'
 
+app.config['SESSION_COOKIE_SAMESITE'] = 'None'
+app.config['SESSION_COOKIE_SECURE'] = True
+
 # ── CORS: allow Vite dev server with credentials (needed for session cookies) ─
 CORS(app,
-     origins=['http://localhost:5173', 'http://127.0.0.1:5173'],
+     origins=[
+         'http://localhost:5173',
+         'http://127.0.0.1:5173',
+         'http://localhost:3000',
+         'https://*.vercel.app'  # Cho phép tất cả các tên miền từ Vercel
+     ],
      supports_credentials=True)
 
 # ── A01: Broken Access Control ───────────────────────────────────────────────
