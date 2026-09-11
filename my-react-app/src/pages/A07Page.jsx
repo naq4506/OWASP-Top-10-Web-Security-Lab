@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import { API_BASE } from './apiConfig';
+
 // ── Design tokens ─────────────────────────────────────────────────────────────
 const T      = '#ff2d95';
 const BG     = '#0a0f1e';
@@ -218,7 +220,7 @@ function LoginPage({ onLoginSuccess, onGoRegister }) {
     setLoading(true);
     setFb({ msg: '', status: '' });
     try {
-      const res = await fetch('http://localhost:5000/api/a07/login', {
+      const res = await fetch(`${API_BASE}/api/a07/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -278,7 +280,7 @@ function RegisterPage({ onGoLogin }) {
     setLoading(true);
     setFb({ msg: '', status: '' });
     try {
-      const res = await fetch('http://localhost:5000/api/a07/register', {
+      const res = await fetch(`${API_BASE}/api/a07/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -327,7 +329,7 @@ function Dashboard({ user, onLogout }) {
   const roleColor = { admin: '#ef4444', ceo: T, user: GREEN }[user.role] || BODY;
 
   const handleLogout = async () => {
-    try { await fetch('http://localhost:5000/api/a07/logout', { method: 'POST', credentials: 'include' }); }
+    try { await fetch(`${API_BASE}/api/a07/logout`, { method: 'POST', credentials: 'include' }); }
     catch { /* ignore */ }
     onLogout();
   };

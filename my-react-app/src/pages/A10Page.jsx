@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { API_BASE } from './apiConfig';
 
-const API_BASE = 'http://localhost:5000';
 
 const ACCENT = '#d4ff00';
 const BG     = '#0a1120';

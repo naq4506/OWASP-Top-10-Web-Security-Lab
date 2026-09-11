@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-
-const API = 'http://localhost:5000/api/a03';
+import { API_BASE } from './apiConfig';
+const API = `${API_BASE}/api/a03`;
 
 const BG     = '#0a0f1e';
 const C1     = '#0f1729';

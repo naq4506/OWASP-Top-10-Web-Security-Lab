@@ -3,6 +3,10 @@
     {
       "source": "/api/:path*",
       "destination": "https://owasp-top-10-web-security-lab.onrender.com/api/:path*"
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
     }
   ]
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE } from './apiConfig';
 
 // ─────────────────────────────────────────────────────────────────────────
 // A01 Target Site: "SecureBank Online" customer profile page.
@@ -27,7 +28,7 @@ function A01Target() {
     setError('');
     setProfile(null);
 
-    fetch(`/api/a01/profile?user_id=${encodeURIComponent(id)}`)
+    fetch(`${API_BASE}/api/a01/profile?user_id=${encodeURIComponent(id)}`)
       .then(async (res) => {
         const data = await res.json();
         if (!res.ok) {
